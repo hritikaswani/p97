@@ -1,17 +1,27 @@
 import random
+gotCorrect = False
+tries = 5
+numberGenerator = round(random.randint(1,9))
 
-a = random.randint(0,9)
+while gotCorrect == False:
+    answer = int(input("What is the number? "))
 
-guess = int(input("Enter an integer from 1 to 9: "))
-while a != "guess":
-    print
-    if (guess < a):
-        print("Your guess was too low!")
-        guess = int(input("Enter an integer from 1 to 9: "))
-    elif (guess > a):
-        print("Your guess was too high!")
-        guess = int(input("Enter an integer from 1 to 9: "))
+    if (answer == numberGenerator):
+        print("You are correct")
+        tries += 1
+        gotCorrect = True
+        
+
+    elif (answer > numberGenerator):
+        print("Too big")
+        tries = tries - 1
+
     else:
-        print("YOU GUESSED IT!!!!")
-     
-    print
+        print("Too small")
+        tries = tries - 1
+
+if tries > 0:
+    print("Congratulations!")
+
+else:
+    print("Too Bad!")
