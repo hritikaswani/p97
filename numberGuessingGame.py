@@ -12,5 +12,5 @@ while chances <5:
     else:
         print("No, the number you chose is greater than the actual number.")
     chances=chances+1
-if chances>5:
+if chances>=5:
     print("You Lose, the correct number is ", number )
